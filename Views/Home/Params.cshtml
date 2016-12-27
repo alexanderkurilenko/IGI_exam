@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Params";
+    Dictionary<string, string> dic = Model;
+}
+
+<h2>Params</h2>
+<body>
+   
+    @foreach (string key in @Model.Keys)
+    {
+        @Html.DisplayText(key)
+    }
+    <table border="1">
+        <tr>
+            <th>
+                @Html.DisplayName("Key")
+            </th>
+            <th> 
+                @Html.DisplayName("Value")
+            </th>
+        </tr>
+        @foreach (string key in dic.Keys)
+        {
+            <tr >
+                <td>
+                    @Html.DisplayName(key)
+                </td>
+
+                <td>
+                    @Html.DisplayName(dic[key])
+                </td>
+
+            </tr>
+        }
+    </table>
+</body>
+

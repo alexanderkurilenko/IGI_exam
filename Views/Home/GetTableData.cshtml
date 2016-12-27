@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.TableModel
+
+@{
+    ViewBag.Title = "GetTableData";
+    
+    int col=Model.Cols;
+}
+
+<h2>GetTableData from partial view @Model.Cols</h2>
+
+<html>
+<body>
+    @for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            int a = @i * @j;
+            <span>@i*@j = @a </span>
+        }
+        <br>
+    }
+    ропорпо
+</body>
+</html>
+  
+    
+  
+
+

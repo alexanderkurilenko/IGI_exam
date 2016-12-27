@@ -1,0 +1,33 @@
+﻿
+@{
+    int number = Model;
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "tableBody"
+    };
+    int[,] table = new int[number, number];
+    WebApplication1.Models.TableModel md = new WebApplication1.Models.TableModel { Cols = Model };
+}
+  
+  
+<h2>Number</h2>
+
+   <body id="tableBody">
+       @Html.Action("GetTableData", new { num = md })
+   </body>
+      
+   
+
+
+        
+
+
+@using (Ajax.BeginForm("GetTableData", ajaxOptions))
+{
+    <div>
+         @Html.EditorFor(m=>md.Cols)
+        <button type="submit" >Отобразить</button>
+    </div>
+}
+@Scripts.Render("~/scripts/jquery-1.10.2.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
